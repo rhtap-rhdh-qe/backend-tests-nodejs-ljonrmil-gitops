@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend-tests-nodejs-ljonrmil-gitops
+  description: This is GitOps manifest for backend-tests-nodejs-ljonrmil   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=backend-tests-nodejs-ljonrmil
+    backstage.io/kubernetes-id: backend-tests-nodejs-ljonrmil 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: backend-tests-nodejs-ljonrmil
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:backend-tests-nodejs-ljonrmil

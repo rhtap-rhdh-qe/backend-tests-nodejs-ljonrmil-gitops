@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: backend-tests-nodejs-ljonrmil
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: backend-tests-nodejs-ljonrmil 
+  name: backend-tests-nodejs-ljonrmil
+spec:
+  ports:
+  - port: 3001 
+    targetPort: 3001 
+  selector:
+    app.kubernetes.io/instance: backend-tests-nodejs-ljonrmil 
